@@ -1,0 +1,12 @@
+@import url(colors.css);
+/* NerdFonts */
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+/* custom form */
+@import url(thumbRadio.css);
+body {
+  background-color: var(--body);
+}
+
+* {
+  color: var(--text);
+}

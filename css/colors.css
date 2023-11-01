@@ -1,0 +1,22 @@
+:root {
+  --body: #09003b;
+  --text: #fff;
+
+  --primary: #7234fa;
+  --secondary: #ddd8ce;
+  --tertiary: #222222;
+  --quaternary: #33463;
+  --quinary: #312f36;
+
+  --1: #1a601e;
+  --2: #486223;
+  --3: #837a36;
+  --4: #7f461a;
+  --5: #5e1010;
+
+  --1-sel: #00b409;
+  --2-sel: #74c700;
+  --3-sel: #ddc724;
+  --4-sel: #ff6f00;
+  --5-sel: #ca0000;
+}

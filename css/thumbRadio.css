@@ -1,0 +1,57 @@
+input[type="radio"] {
+  appearance: none;
+}
+
+.nf.radio {
+  font-size: 2.5rem;
+}
+
+label.radio:hover {
+  cursor: pointer !important;
+  transform: scale(1.2) !important;
+  transition: 0.35s;
+}
+
+label.nunca:hover {
+  color: var(--1);
+}
+
+label.raro:hover {
+  color: var(--2);
+}
+
+label.aveces:hover {
+  color: var(--3);
+}
+
+label.frecuente:hover {
+  color: var(--4);
+}
+
+label.siempre:hover {
+  color: var(--5);
+}
+
+label.nunca::before:checked {
+  color: var(--1);
+}
+
+input[type="radio"]:checked + label.nunca {
+  color: var(--1-sel);
+}
+
+input[type="radio"]:checked + label.raro {
+  color: var(--2-sel);
+}
+
+input[type="radio"]:checked + label.aveces {
+  color: var(--3-sel);
+}
+
+input[type="radio"]:checked + label.frecuente {
+  color: var(--4-sel);
+}
+
+input[type="radio"]:checked + label.siempre {
+  color: var(--5-sel);
+}

@@ -1,0 +1,9 @@
+# Folders
+**/test
+**/temp
+**/tmp
+**/uploads
+
+# Files
+*.tmp
+*.log
