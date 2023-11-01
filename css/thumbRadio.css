@@ -1,3 +1,5 @@
+@import url(colors.css);
+
 input[type="radio"] {
   appearance: none;
 }
@@ -36,22 +38,24 @@ label.nunca::before:checked {
   color: var(--1);
 }
 
-input[type="radio"]:checked + label.nunca {
+input[type="radio"]:checked+label.nunca {
   color: var(--1-sel);
 }
 
-input[type="radio"]:checked + label.raro {
+input[type="radio"]:checked+label.raro {
   color: var(--2-sel);
 }
 
-input[type="radio"]:checked + label.aveces {
+input[type="radio"]:checked+label.aveces {
   color: var(--3-sel);
 }
 
-input[type="radio"]:checked + label.frecuente {
+input[type="radio"]:checked+label.frecuente {
   color: var(--4-sel);
 }
 
-input[type="radio"]:checked + label.siempre {
+input[type="radio"]:checked+label.siempre {
   color: var(--5-sel);
 }
+
+@import url(tooltip.css);
