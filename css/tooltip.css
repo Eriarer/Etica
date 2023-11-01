@@ -1,3 +1,5 @@
+@import url(colors.css);
+
 /* Estilos del tooltip */
 .tooltip-inner {
     background-color: var(--primary);
