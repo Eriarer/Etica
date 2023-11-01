@@ -117,6 +117,9 @@ $cuestionario = array(
                 }
                 break;
             }
+            if (seleccionado) {
+              break;
+            }
           }
           if (!seleccionado) {
             globalThis.tooltipId = 'nunca' + i;
