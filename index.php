@@ -34,6 +34,7 @@ $cuestionario = array(
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tooltip.css">
 </head>
 
 <body>
@@ -41,9 +42,10 @@ $cuestionario = array(
   include_once 'include/navbar.php';
   ?>
   <form class="container" action="php/respuestas.php" method="post" id="myForm">
-    <div class="row row-cols-2">
+    <div class="row row-cols-1 row-cols-lg-2">
       <?php
-      for ($i = 1; $i <= 20; $i++) {
+      for ($i = 1; $i <= 20; $i++)
+      {
         echo '<div class="col">';
         echo '<div class="d-flex flex-column  text-center">';
         echo '<div class="h4" id="q' . $i . '">' . $i . '.-' . $cuestionario[$i - 1] . '</div>';
