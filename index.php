@@ -69,8 +69,91 @@ $cuestionario = array(
       </div>
     </div>
   </form>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Agregar un evento 'submit' al formulario
+      document.getElementById('myForm').addEventListener('submit', function(e) {
+        if (!validarFormulario()) {
+          e.preventDefault(); // Evitar que el formulario se envíe si no está validado
+        }
+      });
+
+      function validarFormulario() {
+        for (var i = 1; i <= 20; i++) {
+          var seleccionado = false;
+          var tootltipId = '';
+          for (var j = 1; j <= 5; j++) {
+            switch (j) {
+              case 1:
+                tootltipId = 'nunca' + i;
+                if (document.getElementById(tootltipId).checked) {
+                  seleccionado = true;
+                }
+                break;
+              case 2:
+                tootltipId = 'raro' + i;
+                if (document.getElementById(tootltipId).checked) {
+                  seleccionado = true;
+                }
+                break;
+              case 3:
+                tootltipId = 'aveces' + i;
+                if (document.getElementById(tootltipId).checked) {
+                  seleccionado = true;
+                }
+                break;
+              case 4:
+                tootltipId = 'frecuente' + i;
+                if (document.getElementById(tootltipId).checked) {
+                  seleccionado = true;
+                }
+                break;
+              case 5:
+                tootltipId = 'siempre' + i;
+                if (document.getElementById(tootltipId).checked) {
+                  seleccionado = true;
+                }
+                break;
+            }
+          }
+          if (!seleccionado) {
+            globalThis.tooltipId = 'nunca' + i;
+            // mostrar el tooltip con la variable global
+            mostrarTooltip();
+            // llamar el foco al primer radio de la pregunta
+            document.getElementById(tooltipId).focus();
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function mostrarTooltip() {
+        $('#' + tooltipId).tooltip({
+          title: 'Selecciona una respuesta',
+          placement: 'bottom', // Puedes ajustar la posición del tooltip según tus necesidades
+          trigger: 'manual'
+        }).tooltip('show');
+      }
+
+      // Ocultar cualquier tooltip que se haya mostrado al hacer clic en el formulario
+      document.getElementById('myForm').addEventListener('click', function() {
+        ocultarTooltips();
+      });
+
+      // Ocultar cualquier tooltip que se haya mostrado al cambiar el formulario
+      document.getElementById('myForm').addEventListener('change', function() {
+        ocultarTooltips();
+      });
+
+      function ocultarTooltips() {
+        // Ocultar el tooltip si está visible
+        $('#' + tooltipId).tooltip('hide');
+      }
+    });
+  </script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 </html>
