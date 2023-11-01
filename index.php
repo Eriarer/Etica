@@ -46,7 +46,7 @@ $cuestionario = array(
       for ($i = 1; $i <= 20; $i++) {
         echo '<div class="col">';
         echo '<div class="d-flex flex-column  text-center">';
-        echo '<div class="h4">' . $i . '.-' . $cuestionario[$i - 1] . '</div>';
+        echo '<div class="h4" id="q' . $i . '">' . $i . '.-' . $cuestionario[$i - 1] . '</div>';
         echo '<div class="radioInput">';
         echo '<input class="form-check-input position-static" type="radio" name="p' . $i . '" id="nunca' . $i . '" value="1">
                     <label for="nunca' . $i . '" class="nf nf-md-thumb_down mx-4 radio nunca"></label>';
@@ -75,8 +75,8 @@ $cuestionario = array(
     document.addEventListener('DOMContentLoaded', function() {
       // Agregar un evento 'submit' al formulario
       document.getElementById('myForm').addEventListener('submit', function(e) {
-        if (!validarFormulario()) {
-          e.preventDefault(); // Evitar que el formulario se envíe si no está validado
+        if (!validarFormulario()) { //si no se respondio todo validarormulario = false
+          e.preventDefault(); // Evitar que el formulario se envíe
         }
       });
 
@@ -121,12 +121,12 @@ $cuestionario = array(
               break;
             }
           }
-          if (!seleccionado) {
-            globalThis.tooltipId = 'nunca' + i;
+          if (!seleccionado) { //si un input esta seleccionado, no se muestra el tooltip
+            globalThis.tooltipId = 'q' + i;
             // mostrar el tooltip con la variable global
             mostrarTooltip();
             // llamar el foco al primer radio de la pregunta
-            document.getElementById(tooltipId).focus();
+            document.getElementById('nunca' + i).focus();
             return false;
           }
         }
@@ -136,7 +136,7 @@ $cuestionario = array(
       function mostrarTooltip() {
         $('#' + tooltipId).tooltip({
           title: 'Selecciona una respuesta',
-          placement: 'bottom', // Puedes ajustar la posición del tooltip según tus necesidades
+          placement: 'top', // Puedes ajustar la posición del tooltip según tus necesidades
           trigger: 'manual'
         }).tooltip('show');
       }
