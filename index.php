@@ -35,7 +35,25 @@ $cuestionario = array(
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/tooltip.css">
+
+  <!-- favIcon -->
+  <link id="favicon" rel="shortcut icon" type="image/png" href="#" />
+
+
 </head>
+<script>
+  window.matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', ({
+      matches
+    }) => {
+      $favIcon = document.getElementById("favicon");
+      if (matches) {
+        $favIcon.setAttribute("href", "media/images/favIconLigth.png");
+      } else {
+        $favIcon.setAttribute("href", "media/images/favIconDark.png");
+      }
+    })
+</script>
 
 <body>
   <?php
