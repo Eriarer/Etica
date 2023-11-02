@@ -7,7 +7,7 @@ $_SERVER['ROOT'] = "http://" . $_SERVER['SERVER_NAME'] . "/Etica/";
 
 <head>
   <!-- favIcon -->
-  <link rel="shortcut icon" type="image/png" href="#" />
+  <link rel="shortcut icon" type="image/png" href="<?php echo $_SERVER['ROOT'] . 'media/images/favIcon/favIconGray.png' ?>" />
 </head>
 
 <script>
@@ -17,13 +17,9 @@ $_SERVER['ROOT'] = "http://" . $_SERVER['SERVER_NAME'] . "/Etica/";
     }) => {
       if (matches) {
         // asignar favIcon sin utilizar el ID
-        document.querySelector("link[rel*='icon']").href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIconLigth.png' ?>";
+        document.querySelector("link[rel*='icon']").href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIcon/favIconLigth.png' ?>";
       } else {
-        document.querySelector("link[rel*='icon']").href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIconDark.png' ?>";
+        document.querySelector("link[rel*='icon']").href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIcon/favIconDark.png' ?>";
       }
     });
-
-  // asignar favIcon utilizando obteniendo el color del tema
-  const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Ligth' : 'Dark';
-  document.querySelector("link[rel*='icon']").href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIcon' ?>" + theme + ".png";
 </script>
