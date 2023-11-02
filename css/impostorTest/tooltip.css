@@ -1,0 +1,29 @@
+/* Estilos del tooltip */
+.tooltip-inner {
+  background-color: var(--primary);
+  /* Cambia el color de fondo del tooltip */
+  color: white;
+  font-size: large;
+  /* Cambia el color del texto del tooltip */
+}
+
+/* modifiar el color de la flecha */
+.tooltip.bs-tooltip-auto[x-placement^="right"] .arrow::before,
+.tooltip.bs-tooltip-right .arrow::before {
+  border-right-color: var(--primary);
+}
+
+.tooltip.bs-tooltip-auto[x-placement^="left"] .arrow::before,
+.tooltip.bs-tooltip-left .arrow::before {
+  border-left-color: var(--primary);
+}
+
+.tooltip.bs-tooltip-auto[x-placement^="top"] .arrow::before,
+.tooltip.bs-tooltip-top .arrow::before {
+  border-top-color: var(--primary);
+}
+
+.tooltip.bs-tooltip-auto[x-placement^="bottom"] .arrow::before,
+.tooltip.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: var(--primary);
+}
