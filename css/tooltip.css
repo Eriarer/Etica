@@ -4,7 +4,8 @@
 .tooltip-inner {
   background-color: var(--primary);
   /* Cambia el color de fondo del tooltip */
-  color: var(--secondary);
+  color: white;
+  font-size: large;
   /* Cambia el color del texto del tooltip */
 }
 
