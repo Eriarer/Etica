@@ -1,5 +1,11 @@
 <?php
 include_once '../include/session.php';
+
+if ($_SERVER['REQUEST_METHOD'] != 'POST')
+{
+    header('Location: ../index.php');
+}
+
 ?>
 <html lang="es">
 
@@ -9,10 +15,12 @@ include_once '../include/session.php';
     <title>Document</title>
     <link rel="stylesheet" href="../css/score.css">
 </head>
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+<style>
+    <?php
     $puntos = 0;
-    for ($i = 1; $i <= 20; $i++) {
+    for ($i = 1; $i <= 20; $i++)
+    {
         $p = $_POST["p" . $i];
         $puntos = $puntos + $p;
     }
@@ -21,17 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // 360 = 100pts
     $degree = 3.6; // aumento de grados por punto
     $angle = $puntos * $degree;
-    if ($angle > 180) {
+    if ($angle > 180)
+    {
         $animationRight = 'rotate(180deg)';
         $animationLeft = 'rotate(' . ($angle - 180) . 'deg)';
-    } else {
+    }
+    else
+    {
         $animationRight = 'rotate(' . $angle . 'deg)';
         $animationLeft = 'rotate(0deg)';
     }
-}
-?>
-<style>
-    .score-number::after {
+    ?>.score-number::after {
         position: absolute;
         top: 42%;
         left: 50%;
@@ -116,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="circle-bg-color-anim score-circular">
         <div class="circle-bg-color-anim score-inner"></div>
         <div class="score-number"></div>
-        <div class="circle-text-color-anim score-text">out of 100</div>
+        <div class="circle-text-color-anim score-text">De 100</div>
         <div class="score-circle">
             <div class="circle-bg-color-anim score-bar progress-right">
                 <div class="circle-bg-color-anim score-progress"></div>
