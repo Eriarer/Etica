@@ -1,0 +1,27 @@
+.contenedor {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.contenedor h1 {
+    text-align: center;
+    font-size: 4em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.contenedor h3 {
+    font-size: 2em;
+}
+
+.contenedor p,
+.contenedor ul {
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  
