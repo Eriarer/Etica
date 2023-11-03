@@ -1,18 +1,17 @@
 :root {
   --body: #09003b;
-  --text: #fff;
+  --text: #ddd8ce;
 
   --primary: #7234fa;
-  --secondary: #ddd8ce;
+  --secondary: #071c42;
   --tertiary: #222222;
-  --quaternary: #33463;
-  --quinary: #312f36;
+  --quaternary: #312f36;
 
-  --1: #1a601e;
-  --2: #486223;
-  --3: #837a36;
-  --4: #7f461a;
-  --5: #5e1010;
+  --1: #017707;
+  --2: #4e8500;
+  --3: #a19115;
+  --4: #a54800;
+  --5: #770101;
 
   --1-sel: #00b409;
   --2-sel: #74c700;
