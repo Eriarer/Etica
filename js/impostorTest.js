@@ -10,8 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function validarFormulario() {
     for (var i = 1; i <= 20; i++) {
       var seleccionado = false;
-      var tooltipId = "";
-      for (var j = 1; j <= 5; j++) {
+      for (var j = 0; j < 5; j++) {
         tooltipId = "p" + i + "r" + j;
         if (document.getElementById(tooltipId).checked) {
           seleccionado = true;
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (!seleccionado) {
         //si un input esta seleccionado, no se muestra el tooltip
-        globalThis.tooltipId = "q" + i;
+        tooltipId = "q" + i;
         // mostrar el tooltip con la variable global
         mostrarTooltip();
         // llamar el foco al primer radio de la pregunta
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return true;
       }
     }
-    return fakse;
+    return false;
   }
 
   function mostrarTooltip() {
