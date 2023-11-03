@@ -61,25 +61,24 @@ $cuestionario = array(
   <form class="container" action="respuestas.php" method="post" id="myForm">
     <div class="row row-cols-1 row-cols-lg-2">
       <?php
-      for ($i = 1, $j = 1; $i <= 20; $i++)
-      {
+      for ($i = 1, $j = 1; $i <= 20; $i++) {
         echo '<div class="col d-flex flex-column  text-center">';
         echo '<div class="h4" id="q' . $i . '">' . $i . '.-' . $cuestionario[$i - 1] . '</div>';
         echo '<div class="radioInput">';
         echo '<input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="1">
-              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumb_down mx-4 radio nunca"></label>';
+              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumb_down mx-3 mx-md-3 mx-lg-4 radio nunca"></label>';
         $j++;
         echo '<input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="2">
-              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumb_down_outline mx-4 radio raro"></label>';
+              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumb_down_outline mx-3 mx-md-3 mx-lg-4 radio raro"></label>';
         $j++;
         echo '<input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="3">
-              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumbs_up_down_outline mx-4 radio aveces"></label>';
+              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumbs_up_down_outline mx-3 mx-md-3 mx-lg-4 radio aveces"></label>';
         $j++;
         echo '<input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="4">
-              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumb_up_outline mx-4 radio frecuente"></label>';
+              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumb_up_outline mx-3 mx-md-3 mx-lg-4 radio frecuente"></label>';
         $j++;
         echo '<input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="5">
-              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumb_up mx-4 radio siempre"></label>';
+              <label for="p' . $i . 'r' . $j . '" class="nf nf-md-thumb_up mx-3 mx-md-3 mx-lg-4 radio siempre"></label>';
         echo '</div>';
         echo '</div>';
       } ?>

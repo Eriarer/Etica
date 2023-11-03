@@ -34,8 +34,7 @@ label.frecuente:hover {
 label.siempre:hover {
   color: var(--5);
 }
-
-label.nunca::before:checked {
+* label.nunca::before:checked {
   color: var(--1);
 }
 
@@ -57,4 +56,28 @@ input[type="radio"]:checked + label.frecuente {
 
 input[type="radio"]:checked + label.siempre {
   color: var(--5-sel);
+}
+
+@media screen and (max-width: 1750px) {
+  .nf.radio {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nf.radio {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .nf.radio {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nf.radio {
+    font-size: 3rem;
+  }
 }
