@@ -6,6 +6,95 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST')
   header('Location: ../index.php');
 }
 
+$puntos = 0;
+for ($i = 1; $i <= 20; $i++)
+{
+  $p = $_POST["p" . $i];
+  $puntos += $p;
+}
+$pointDivisor = $puntos;
+$steps = $puntos / $pointDivisor;
+
+$colors = [];
+// colores en formato rgb(r,g,b)
+$startColor = array(80, 219, 7);
+switch ($puntos)
+{
+  case $puntos <= 25:
+    $endColor = array(90, 207, 0);
+    break;
+  case $puntos <= 30:
+    $endColor = array(118, 207, 23);
+    break;
+  case $puntos <= 40:
+    $endColor = array(150, 207, 23);
+    break;
+  case $puntos <= 50:
+    $endColor = array(196, 196, 4);
+    break;
+  case $puntos <= 60:
+    $endColor = array(189, 165, 11);
+    break;
+  case $puntos <= 70:
+    $endColor = array(189, 136, 11);
+    break;
+  case $puntos <= 80:
+    $endColor = array(204, 98, 6);
+    break;
+  case $puntos <= 90:
+    $endColor = array(196, 65, 0);
+    break;
+  case $puntos <= 100:
+    $endColor = array(196, 26, 0);
+    break;
+  default:
+    $endColor = array(80, 219, 7);
+    break;
+}
+$blanquear = 0.87;
+
+$redStep = ($startColor[0] - $endColor[0]) / $pointDivisor;
+$greenStep = ($startColor[1] - $endColor[1]) / $pointDivisor;
+$blueStep = ($startColor[2] - $endColor[2]) / $pointDivisor;
+
+for ($i = 0; $i <= $pointDivisor; $i++)
+{
+  $colors[$i] = 'rgb(' . $startColor[0] . ', ' . $startColor[1] . ', ' . $startColor[2] . ')';
+  $startColor[0] -= $redStep;
+  $startColor[1] -= $greenStep;
+  $startColor[2] -= $blueStep;
+}
+
+// hacer otro arreglo de colores, similar al anterior, pero que sean blancos con tinte de color
+$colorBg = [];
+
+for ($i = 0; $i <= $pointDivisor; $i++)
+{
+  //obtener el color RGB de  $colors[$i]
+  $tempArray = str_replace('rgb(', '', $colors[$i]);
+  $tempArray = str_replace(')', '', $tempArray);
+  $tempArray = explode(',', $tempArray);
+
+  // Calcula las diferencias entre cada componente de color y el blanco
+  $redDiff = (255 - $tempArray[0]) * $blanquear;
+  $greenDiff = (255 -  $tempArray[1]) * $blanquear;
+  $blueDiff = (255 - $tempArray[2]) * $blanquear;
+
+  // Ajusta los componentes de color para acercarlos al blanco
+  $witheR =  $tempArray[0] + $redDiff;
+  $witheG =  $tempArray[1] + $greenDiff;
+  $witheB =  $tempArray[2] + $blueDiff;
+
+  // Almacena el nuevo color en el array
+  $colorBg[$i] = 'rgb(' . $witheR . ', ' . $witheG . ', ' . $witheB . ')';
+}
+
+$degree = 3.6; // aumento de grados por punto
+$angle = $puntos * $degree;
+$animationRight = 'rotate(' . min(180, $angle) . 'deg)';
+$animationLeft = 'rotate(' . max(0, $angle - 180) . 'deg)';
+$animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
+
 ?>
 <html lang="es">
 
@@ -23,94 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST')
 </head>
 
 <style>
-  <?php
-  $puntos = 0;
-  for ($i = 1; $i <= 20; $i++)
-  {
-    $p = $_POST["p" . $i];
-    $puntos += $p;
-  }
-  $steps = $puntos / $pointDivisor;
-
-  $colors = [];
-  // colores en formato rgb(r,g,b)
-  $startColor = array(80, 219, 7);
-  switch ($puntos)
-  {
-    case $puntos <= 25:
-      $endColor = array(90, 207, 0);
-      break;
-    case $puntos <= 30:
-      $endColor = array(118, 207, 23);
-      break;
-    case $puntos <= 40:
-      $endColor = array(150, 207, 23);
-      break;
-    case $puntos <= 50:
-      $endColor = array(196, 196, 4);
-      break;
-    case $puntos <= 60:
-      $endColor = array(189, 165, 11);
-      break;
-    case $puntos <= 70:
-      $endColor = array(189, 136, 11);
-      break;
-    case $puntos <= 80:
-      $endColor = array(204, 98, 6);
-      break;
-    case $puntos <= 90:
-      $endColor = array(196, 65, 0);
-      break;
-    case $puntos <= 100:
-      $endColor = array(196, 26, 0);
-      break;
-  }
-  $blanquear = 0.87;
-
-  $redStep = ($startColor[0] - $endColor[0]) / $pointDivisor;
-  $greenStep = ($startColor[1] - $endColor[1]) / $pointDivisor;
-  $blueStep = ($startColor[2] - $endColor[2]) / $pointDivisor;
-
-  for ($i = 0; $i <= $pointDivisor; $i++)
-  {
-    $colors[$i] = 'rgb(' . $startColor[0] . ', ' . $startColor[1] . ', ' . $startColor[2] . ')';
-    $startColor[0] -= $redStep;
-    $startColor[1] -= $greenStep;
-    $startColor[2] -= $blueStep;
-  }
-
-  // hacer otro arreglo de colores, similar al anterior, pero que sean blancos con tinte de color
-  $colorBg = [];
-
-  for ($i = 0; $i <= $pointDivisor; $i++)
-  {
-    //obtener el color RGB de  $colors[$i]
-    $tempArray = str_replace('rgb(', '', $colors[$i]);
-    $tempArray = str_replace(')', '', $tempArray);
-    $tempArray = explode(',', $tempArray);
-
-    // Calcula las diferencias entre cada componente de color y el blanco
-    $redDiff = (255 - $tempArray[0]) * $blanquear;
-    $greenDiff = (255 -  $tempArray[1]) * $blanquear;
-    $blueDiff = (255 - $tempArray[2]) * $blanquear;
-
-    // Ajusta los componentes de color para acercarlos al blanco
-    $witheR =  $tempArray[0] + $redDiff;
-    $witheG =  $tempArray[1] + $greenDiff;
-    $witheB =  $tempArray[2] + $blueDiff;
-
-    // Almacena el nuevo color en el array
-    $colorBg[$i] = 'rgb(' . $witheR . ', ' . $witheG . ', ' . $witheB . ')';
-  }
-
-
-
-  $degree = 3.6; // aumento de grados por punto
-  $angle = $puntos * $degree;
-  $animationRight = 'rotate(' . min(180, $angle) . 'deg)';
-  $animationLeft = 'rotate(' . max(0, $angle - 180) . 'deg)';
-  $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
-  ?>.score-number::after {
+  .score-number::after {
     position: absolute;
     top: 42%;
     left: 50%;
