@@ -1,3 +1,4 @@
+var tooltipId = null;
 document.addEventListener("DOMContentLoaded", function () {
   // Agregar un evento 'submit' al formulario
   document.getElementById("myForm").addEventListener("submit", function (e) {
