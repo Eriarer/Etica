@@ -11,15 +11,14 @@ $_SERVER['ROOT'] = "http://" . $_SERVER['SERVER_NAME'] . "/Etica/";
 </head>
 
 <script>
-  window.matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', ({
-      matches
-    }) => {
-      if (matches) {
-        // asignar favIcon sin utilizar el ID
-        document.querySelector("link[rel*='icon']").href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIcon/favIconLigth.png' ?>";
-      } else {
-        document.querySelector("link[rel*='icon']").href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIcon/favIconDark.png' ?>";
-      }
-    });
+  const faviconLink = document.querySelector("link[rel*='icon']");
+  const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Light' : 'Dark';
+  faviconLink.href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIcon/favIcon' ?>" + theme + ".png";
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({
+    matches
+  }) => {
+    const theme = matches ? 'Dark' : 'Light';
+    faviconLink.href = "<?php echo $_SERVER['ROOT'] . 'media/images/favIcon/favIcon' ?>" + theme + ".png";
+  });
 </script>
