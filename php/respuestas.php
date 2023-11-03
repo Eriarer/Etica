@@ -30,15 +30,44 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST')
     $p = $_POST["p" . $i];
     $puntos += $p;
   }
-
+  $puntos = 60;
   $pointDivisor = 20;
   $steps = $puntos / $pointDivisor;
 
   $colors = [];
   // colores en formato rgb(r,g,b)
-  $startColor = array(255, 0, 238);
-  $endColor = array(163, 0, 0);
-  $blanquear = 0.6;
+  $startColor = array(80, 219, 7);
+  switch ($puntos)
+  {
+    case $puntos <= 25:
+      $endColor = array(90, 207, 0);
+      break;
+    case $puntos <= 30:
+      $endColor = array(118, 207, 23);
+      break;
+    case $puntos <= 40:
+      $endColor = array(150, 207, 23);
+      break;
+    case $puntos <= 50:
+      $endColor = array(196, 196, 4);
+      break;
+    case $puntos <= 60:
+      $endColor = array(189, 165, 11);
+      break;
+    case $puntos <= 70:
+      $endColor = array(189, 136, 11);
+      break;
+    case $puntos <= 80:
+      $endColor = array(204, 98, 6);
+      break;
+    case $puntos <= 90:
+      $endColor = array(196, 65, 0);
+      break;
+    case $puntos <= 100:
+      $endColor = array(196, 26, 0);
+      break;
+  }
+  $blanquear = 0.87;
 
   $redStep = ($startColor[0] - $endColor[0]) / $pointDivisor;
   $greenStep = ($startColor[1] - $endColor[1]) / $pointDivisor;
