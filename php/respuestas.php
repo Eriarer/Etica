@@ -30,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST')
     $p = $_POST["p" . $i];
     $puntos += $p;
   }
-  $puntos = 60;
   $pointDivisor = 20;
   $steps = $puntos / $pointDivisor;
 
