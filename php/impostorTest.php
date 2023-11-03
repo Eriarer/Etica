@@ -71,5 +71,6 @@ $cuestionario = array(
     </div>
   </form>
 </body>
+<script src="../js/impostorTest.js"></script>
 
 </html>
