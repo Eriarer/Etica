@@ -53,11 +53,15 @@ $cuestionario = array(
       for ($i = 1, $j = 1; $i <= 20; $i++)
       {
         echo '<div class="col">';
+        echo ' <div class="card card-body  mx-1 mx-sm-1 mx-md-3 my-sm-1 my-md-2 p-0">';
+        echo '  <div class="h4 card-title" id="q' . $i . '">' . $i . '.-' . $cuestionario[$i - 1] . '</div>';
+        echo '  <div class="radioInput text-center">';
         for ($j = 0; $j < 5; $j++)
         {
-          echo '<input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="1">
-              <label for="p' . $i . 'r' . $j . '" class="nf ' . $nfClass[$j] . ' mx-3 mx-md-3 mx-lg-4 radio ' . $resuestas[$j] . ' "></label>';
+          echo ' <input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="1">
+                <label for="p' . $i . 'r' . $j . '" class="nf ' . $nfClass[$j] . ' mx-3 mx-md-3 mx-lg-4 radio ' . $resuestas[$j] . ' "></label>';
         }
+        echo '  </div>';
         echo ' </div>';
         echo '</div>';
       } ?>
