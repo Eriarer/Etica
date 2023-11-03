@@ -34,8 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#" + tooltipId)
       .tooltip({
         title: "Selecciona una respuesta",
-        placement: "top", // Puedes ajustar la posición del tooltip según tus necesidades
-        trigger: "manual",
+        placement: "top",
       })
       .tooltip("show");
   }
