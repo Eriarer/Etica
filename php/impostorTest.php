@@ -45,16 +45,14 @@ $cuestionario = array(
   include_once '../include/navbar.php';
   ?>
   <form class="container" action="respuestas.php" method="post" id="myForm">
-    <div class="row row-cols-1 row-cols-lg-2">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
       <?php
       $resuestas = array('nunca', 'raro', 'aveces', 'frecuente', 'siempre');
       $nfClass = array('nf-md-thumb_down', 'nf-md-thumb_down_outline', 'nf-md-thumbs_up_down_outline', 'nf-md-thumb_up_outline', 'nf-md-thumb_up');
 
       for ($i = 1, $j = 1; $i <= 20; $i++)
       {
-        echo '<div class="col d-flex flex-column  text-center">';
-        echo ' <div class="h4" id="q' . $i . '">' . $i . '.-' . $cuestionario[$i - 1] . '</div>';
-        echo ' <div class="radioInput">';
+        echo '<div class="col">';
         for ($j = 0; $j < 5; $j++)
         {
           echo '<input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="1">
