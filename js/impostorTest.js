@@ -50,7 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function ocultarTooltips() {
-    // Ocultar el tooltip si está visible
-    $("#" + tooltipId).tooltip("hide");
+    //si el tooltip esta definido y existe en el DOM se oculta
+    if (tooltipId) {
+      $("#" + tooltipId).tooltip("hide");
+      tooltipId = null;
+    }
   }
 });
