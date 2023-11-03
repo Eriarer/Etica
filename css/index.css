@@ -7,11 +7,16 @@
     text-align: center;
     font-size: 4em;
     margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
 }
 
 .contenedor h3 {
+    margin-top: 1em;
     font-size: 2em;
+}
+
+.contenedor h4 {
+    margin-top: 1em;
 }
 
 .contenedor p,
@@ -21,7 +26,26 @@
 }
 
 img {
-    width: 100%;
-    border-radius: 50%;
-  }
-  
+    width: 80%;
+    border-radius: 5%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.image {
+    text-align: center;
+    align-items: center;
+}
+
+.dividedList img {
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 45%;
+}
+
+.dividedList {
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+}
