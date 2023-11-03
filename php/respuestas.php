@@ -28,17 +28,17 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
         $p = $_POST["p" . $i];
         $puntos = $puntos + $p;
     }
-    $puntos = $puntos;
-    $steps = $puntos / $puntos;
-    // generar un arreglo de $puntos elementos de color rojo -> rgb(255, 59, 48) a verde -> rgb(38, 198, 62)
+    $pointDivisor = $puntos;
+    $steps = $puntos / $pointDivisor;
+    // generar un arreglo de $pointDivisor elementos de color rojo -> rgb(255, 59, 48) a verde -> rgb(38, 198, 62)
     $colors = array();
     $red = 255;
     $green = 59;
     $blue = 48;
-    $redStep = ($red - 38) / $puntos;
-    $greenStep = ($green - 198) / $puntos;
-    $blueStep = ($blue - 62) / $puntos;
-    for ($i = 0; $i <= $puntos; $i++) {
+    $redStep = ($red - 38) / $pointDivisor;
+    $greenStep = ($green - 198) / $pointDivisor;
+    $blueStep = ($blue - 62) / $pointDivisor;
+    for ($i = 0; $i <= $pointDivisor; $i++) {
         $colors[$i] = 'rgb(' . $red . ', ' . $green . ', ' . $blue . ')';
         $red = $red - $redStep;
         $green = $green - $greenStep;
@@ -79,8 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
     @keyframes score-counter {
         <?php
-        for ($i = 0; $i <= $puntos; $i++) {
-            echo ($i * (100 / $puntos)) . "% {
+        for ($i = 0; $i <= $pointDivisor; $i++) {
+            echo ($i * (100 / $pointDivisor)) . "% {
                 color: " . $colors[$i] . ";
                 content: '" . number_format($i * $steps, 0, '', '') . "';
             }";
@@ -101,8 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
     @keyframes circle-text-color-anim {
         <?php
-        for ($i = 0; $i <= $puntos; $i++) {
-            echo ($i * (100 / $puntos)) . "% {
+        for ($i = 0; $i <= $pointDivisor; $i++) {
+            echo ($i * (100 / $pointDivisor)) . "% {
                 color: " . $colors[$i] . ";
             }";
         }
