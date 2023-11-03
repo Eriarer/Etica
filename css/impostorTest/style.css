@@ -1,3 +1,24 @@
 @import url(../basis.css);
 @import url(thumbRadio.css);
 @import url(tooltip.css);
+
+.card {
+  background: #6c5a94;
+  border-radius: 10px;
+}
+
+.card .h4 {
+  font-size: xx-large;
+  background: #544e61;
+  border-radius: 10px 10px 0px 0px;
+  text-align: justify;
+  padding: 0.3em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.card .radioInput {
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
