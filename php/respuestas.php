@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST')
   // colores en formato rgb(r,g,b)
   $startColor = array(255, 0, 238);
   $endColor = array(163, 0, 0);
+  $blanquear = 0.6;
 
   $redStep = ($startColor[0] - $endColor[0]) / $pointDivisor;
   $greenStep = ($startColor[1] - $endColor[1]) / $pointDivisor;
@@ -62,9 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST')
     $tempArray = explode(',', $tempArray);
 
     // Calcula las diferencias entre cada componente de color y el blanco
-    $redDiff = (255 - $tempArray[0]) * 0.8;
-    $greenDiff = (255 -  $tempArray[1]) * 0.8;
-    $blueDiff = (255 - $tempArray[2]) * 0.8;
+    $redDiff = (255 - $tempArray[0]) * $blanquear;
+    $greenDiff = (255 -  $tempArray[1]) * $blanquear;
+    $blueDiff = (255 - $tempArray[2]) * $blanquear;
 
     // Ajusta los componentes de color para acercarlos al blanco
     $witheR =  $tempArray[0] + $redDiff;
