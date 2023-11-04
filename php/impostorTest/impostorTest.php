@@ -84,9 +84,11 @@ $cuestionario = array(
           echo '</div>';
         } ?>
       </div>
-      <div class="row">
-        <div class="col">
-          <button type="submit" class="btn btn-primary">Enviar</button>
+      <div class="container mb-5">
+        <div class="row  row-cols-1 ">
+          <div class="col">
+            <button type="submit" class="btn btn-primary btn-block btn-custom">Enviar</button>
+          </div>
         </div>
       </div>
     </form>
