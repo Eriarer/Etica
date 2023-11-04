@@ -70,7 +70,7 @@
   font-size: xx-large;
   font-weight: bold;
   background: var(--mono2);
-  color: var(--text);
+  color: var(--mono0);
   border-radius: 10px;
   padding: 0.5em;
   padding-left: 1em;
@@ -82,5 +82,5 @@
 .btn-custom:hover {
   background: var(--mono3);
   color: var(--mono0);
-  transform: scale(1.1);
+  transform: scale(1.08);
 }

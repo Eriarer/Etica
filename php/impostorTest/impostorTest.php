@@ -87,7 +87,7 @@ $cuestionario = array(
       <div class="container mb-5">
         <div class="row  row-cols-1 ">
           <div class="col">
-            <button type="submit" class="btn btn-primary btn-block btn-custom">Enviar</button>
+            <button type="submit" class="btn  btn-block btn-custom">Enviar</button>
           </div>
         </div>
       </div>
