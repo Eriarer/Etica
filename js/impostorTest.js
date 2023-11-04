@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ocultarTooltips();
   });
 
-  // Ocultar cualquier tooltip que se haya mostrado al cambiar el formulario
-  document.getElementById("myForm").addEventListener("change", function () {
+  //Ocultar el tooltip si se hace click en el mismo tooltip
+  $(document).on("click", ".tooltip", function () {
     ocultarTooltips();
   });
 
