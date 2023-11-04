@@ -54,39 +54,45 @@ $cuestionario = array(
 </head>
 
 <body>
-  <?php
-  include_once '../../include/navbar.php';
-  ?>
-  <form class="myForm" action="respuestas.php" method="post" id="myForm">
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
-      <?php
-      $resuestas = array('nunca', 'raro', 'aveces', 'frecuente', 'siempre');
-      $meaning = array('Nunca', 'Rara vez', 'A veces', 'Frecuentemente', 'Siempre');
-      $nfClass = array('nf-md-thumb_down', 'nf-md-thumb_down_outline', 'nf-md-thumbs_up_down_outline', 'nf-md-thumb_up_outline', 'nf-md-thumb_up');
+  <div class="wrapper">
+    <?php
+    include_once '../../include/navbar.php';
+    ?>
+    <form class="myForm" action="respuestas.php" method="post" id="myForm">
+      <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
+        <?php
+        $resuestas = array('nunca', 'raro', 'aveces', 'frecuente', 'siempre');
+        $meaning = array('Nunca', 'Rara vez', 'A veces', 'Frecuentemente', 'Siempre');
+        $nfClass = array('nf-md-thumb_down', 'nf-md-thumb_down_outline', 'nf-md-thumbs_up_down_outline', 'nf-md-thumb_up_outline', 'nf-md-thumb_up');
 
-      for ($i = 1, $j = 1; $i <= 20; $i++)
-      {
-        echo '<div class="col">';
-        echo ' <div class="card card-body  mx-1 mx-sm-1 mx-md-3 mx-lg-5 my-2 my-sm-3 my-md-4 my-lg-5 p-0">';
-        echo '  <div class="h4 card-title question" id="q' . $i . '"><div class="nQuestion">' . $i . '</div>' . $cuestionario[$i - 1] . '</div>';
-        echo '  <div class="radioInput text-center">';
-        for ($j = 0; $j < 5; $j++)
+        for ($i = 1, $j = 1; $i <= 20; $i++)
         {
-          echo ' <input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="' . ($j + 1) . '">';
-          echo  '<label for="p' . $i . 'r' . $j . '" class="nf ' . $nfClass[$j] . ' mx-3 mx-md-3 mx-lg-4 radio ' . $resuestas[$j] . ' "></label></label>';
-        }
-        echo '  </div>';
-        echo ' </div>';
-        echo '</div>';
-      } ?>
-    </div>
-    <div class="row">
-      <div class="col">
-        <button type="submit" class="btn btn-primary">Enviar</button>
+          echo '<div class="col">';
+          echo ' <div class="card card-body  mx-1 mx-sm-1 mx-md-3 mx-lg-5 my-2 my-sm-3 my-md-4 my-lg-5 p-0">';
+          echo '  <div class="h4 card-title question" id="q' . $i . '"><div class="nQuestion">' . $i . '</div>' . $cuestionario[$i - 1] . '</div>';
+          echo '  <article class="radioInput text-center">';
+          for ($j = 0; $j < 5; $j++)
+          {
+            echo ' <input class="form-check-input position-static" type="radio" name="p' . $i . '" id="p' . $i . 'r' . $j . '" value="' . ($j + 1) . '">';
+            echo  '<label for="p' . $i . 'r' . $j . '" class="nf ' . $nfClass[$j] . ' px-3 px-md-3 px-lg-4 radio ' . $resuestas[$j] . ' "></label>';
+          }
+          echo '   <div class="d-flex justify-content-center">';
+          echo '    <h3 class="meaning"></h3>';
+          echo '   </div>';
+          echo '  </article>';
+          echo ' </div>';
+          echo '</div>';
+        } ?>
       </div>
-    </div>
-  </form>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </form>
 </body>
+</div>
 <script src="../../js/impostorTest.js"></script>
+
 
 </html>
