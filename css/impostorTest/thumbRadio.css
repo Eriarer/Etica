@@ -58,6 +58,81 @@ input[type="radio"]:checked + label.siempre {
   color: var(--5-sel);
 }
 
+/* caja de SELECCIONAR 
+  cursor: default !important;
+  cambiar el contenido de h3 .meaning
+  al hacer hover
+*/
+.meaning {
+  cursor: default !important;
+  background: var(--mono2);
+  color: var(--text);
+  width: 10em;
+  height: 2em;
+  border-radius: 10px;
+  margin-top: 0.5em;
+  /* alinear el text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* trasicion */
+  transition: 1s;
+}
+.meaning:after {
+  content: "Seleccionar...";
+  color: var(--mono0);
+}
+
+label:hover ~ div > .meaning {
+  transform: scale(1.05) !important;
+  background: var(--mono2) !important;
+}
+input[type="radio"]:checked + label ~ div > .meaning {
+  transform: scale(1.3);
+  background: var(--mono3);
+}
+
+label.nunca:hover ~ div > .meaning:after,
+label.nunca:focus ~ div > .meaning:after {
+  content: "Nunca" !important;
+}
+input[type="radio"]:checked + label.nunca ~ div > .meaning:after {
+  content: "Nunca";
+}
+
+label.raro:hover ~ div > .meaning:after,
+label.raro:focus ~ div > .meaning:after {
+  content: "Raro" !important;
+}
+input[type="radio"]:checked + label.raro ~ div > .meaning:after {
+  content: "Raro";
+}
+
+label.aveces:hover ~ div > .meaning:after,
+label.aveces:focus ~ div > .meaning:after {
+  content: "A veces" !important;
+  transform: scale(1.2) !important;
+}
+input[type="radio"]:checked + label.aveces ~ div > .meaning:after {
+  content: "A veces";
+}
+
+label.frecuente:hover ~ div > .meaning:after,
+label.frecuente:focus ~ div > .meaning:after {
+  content: "Frecuente" !important;
+}
+input[type="radio"]:checked + label.frecuente ~ div > .meaning:after {
+  content: "Frecuente";
+}
+
+label.siempre:hover ~ div > .meaning:after,
+label.siempre:focus ~ div > .meaning:after {
+  content: "Siempre" !important;
+}
+input[type="radio"]:checked + label.siempre ~ div > .meaning:after {
+  content: "Siempre";
+}
+
 @media screen and (max-width: 1750px) {
   .nf.radio {
     font-size: 3.5rem;
