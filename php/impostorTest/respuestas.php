@@ -1,5 +1,5 @@
 <?php
-include_once '../include/session.php';
+include_once '../../include/session.php';
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST')
 {
@@ -109,8 +109,8 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
   <!-- css -->
-  <link rel="stylesheet" href="../css/impostorTest/score.css">
-  <link rel="stylesheet" href="../css/impostorTest/style.css">
+  <link rel="stylesheet" href="../../css/impostorTest/score.css">
+  <link rel="stylesheet" href="../../css/impostorTest/style.css">
 </head>
 
 <style>
@@ -230,7 +230,7 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
 
 <body>
   <?php
-  include_once '../include/navbar.php';
+  include_once '../../include/navbar.php';
   ?>
 
 
