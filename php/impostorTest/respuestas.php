@@ -12,7 +12,6 @@ for ($i = 1; $i <= 20; $i++)
   $p = $_POST["p" . $i];
   $puntos += $p;
 }
-$pointDivisor = 40;
 $blanquear = 0.85;
 $startColor = array(80, 219, 7);
 // colores en formato rgb(r,g,b)
@@ -183,24 +182,61 @@ include_once 'pointCalculation.php';
 
 
 <body>
-  <?php
-  include_once '../../include/navbar.php';
-  ?>
-  <div class="circle-bg-color-anim score-circular">
-    <div class="circle-bg-color-anim score-inner"></div>
-    <div class="score-number"></div>
-    <div class="circle-text-color-anim score-text">100</div>
-    <div class="score-circle">
-      <div class="circle-bg-color-anim score-bar progress-right">
-        <div class="circle-bg-color-anim score-progress"></div>
-      </div>
-      <div class="circle-bg-color-anim score-bar progress-left">
-        <div class="score-progress"></div>
+  <div class="wrapper">
+    <?php
+    include_once '../../include/navbar.php';
+    ?>
+    <div class="puntos">
+      <div class="circle-bg-color-anim score-circular">
+        <div class="circle-bg-color-anim score-inner"></div>
+        <div class="score-number"></div>
+        <div class="circle-text-color-anim score-text">100</div>
+        <div class="score-circle">
+          <div class="circle-bg-color-anim score-bar progress-right">
+            <div class="circle-bg-color-anim score-progress"></div>
+          </div>
+          <div class="circle-bg-color-anim score-bar progress-left">
+            <div class="score-progress"></div>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="resultados row row-cols-1 row-cols-sm-1 row-cols-lg-2">
+      <?php
+      $significado = array(
+        array(
+          "intervalo" => "0 - 40",
+          "titulo" => "Pocas características del síndrome del impostor",
+          "significado" => "Tienes pocas características del síndrome del impostor. Recuerda que esto es una base, si sientes lo contrario, considera hablar con un profesional."
+        ),
+        array(
+          "intervalo" => "41 - 60",
+          "titulo" => "Algunas características del síndrome del impostor",
+          "significado" => "Tu puntuación puede indicar que experimentas raramente el síndrome del impostor. Te recomendamos tomar conciencia y considerar hablar con un profesional si lo necesitas."
+        ),
+        array(
+          "intervalo" => "61 - 80",
+          "titulo" => "Bastantes características del síndrome del impostor",
+          "significado" => "Frecuentemente experimentas el síndrome del impostor. No estás solo/a; muchas personas pasan por esto. Considera buscar apoyo si te sientes abrumado/a."
+        ),
+        array(
+          "intervalo" => "81 - 100",
+          "titulo" => "Demasiadas características del síndrome del impostor",
+          "significado" => "Tienes intensas experiencias del síndrome del impostor. No te preocupes, es común y puedes abordarlo. Buscar apoyo es un paso valiente hacia el crecimiento personal."
+        )
+      );
+      foreach ($significado as $key => $value)
+      {
+        echo '<div class="col">';
+        echo ' <div class="card card-body  mx-1 mx-sm-1 mx-md-3 mx-lg-5 my-2 my-sm-3 my-md-4 my-lg-5 p-0">';
+        echo '  <div class="h4 card-title points"><div class="intervalo">' . $value["intervalo"] . '</div>' . $value["titulo"] . '</div>';
+        echo '  <div class="card-text px-2 px-md-2 px-lg-3">' . $value["significado"] . '</div>';
+        echo ' </div>';
+        echo '</div>';
+      }
+      ?>
+    </div>
   </div>
-
-
 </body>
 
 </html>
