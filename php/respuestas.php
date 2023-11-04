@@ -12,12 +12,10 @@ for ($i = 1; $i <= 20; $i++)
   $p = $_POST["p" . $i];
   $puntos += $p;
 }
-$pointDivisor = $puntos;
-$steps = $puntos / $pointDivisor;
-
-$colors = [];
-// colores en formato rgb(r,g,b)
+$puntos = 99;
+$blanquear = 0.87;
 $startColor = array(80, 219, 7);
+// colores en formato rgb(r,g,b)
 switch ($puntos)
 {
   case $puntos <= 25:
@@ -51,8 +49,12 @@ switch ($puntos)
     $endColor = array(80, 219, 7);
     break;
 }
-$blanquear = 0.87;
 
+$puntos = number_format($puntos, 0, '', '');
+$pointDivisor = $puntos % 2 == 0 ? $puntos / 2  : ($puntos + 1) / 2;
+$pointDivisor = $pointDivisor < 1 ? 1 : $pointDivisor;
+$steps = $puntos / $pointDivisor;
+$colors = [];
 $redStep = ($startColor[0] - $endColor[0]) / $pointDivisor;
 $greenStep = ($startColor[1] - $endColor[1]) / $pointDivisor;
 $blueStep = ($startColor[2] - $endColor[2]) / $pointDivisor;
@@ -60,9 +62,9 @@ $blueStep = ($startColor[2] - $endColor[2]) / $pointDivisor;
 for ($i = 0; $i <= $pointDivisor; $i++)
 {
   $colors[$i] = 'rgb(' . $startColor[0] . ', ' . $startColor[1] . ', ' . $startColor[2] . ')';
-  $startColor[0] -= $redStep;
-  $startColor[1] -= $greenStep;
-  $startColor[2] -= $blueStep;
+  $startColor[0] -= number_format($redStep, 0, '', '');
+  $startColor[1] -= number_format($greenStep, 0, '', '');
+  $startColor[2] -= number_format($blueStep, 0, '', '');
 }
 
 // hacer otro arreglo de colores, similar al anterior, pero que sean blancos con tinte de color
@@ -81,9 +83,9 @@ for ($i = 0; $i <= $pointDivisor; $i++)
   $blueDiff = (255 - $tempArray[2]) * $blanquear;
 
   // Ajusta los componentes de color para acercarlos al blanco
-  $witheR =  $tempArray[0] + $redDiff;
-  $witheG =  $tempArray[1] + $greenDiff;
-  $witheB =  $tempArray[2] + $blueDiff;
+  $witheR =  number_format($tempArray[0] + $redDiff, 0, '', '');
+  $witheG =  number_format($tempArray[1] + $greenDiff, 0, '', '');
+  $witheB =  number_format($tempArray[2] + $blueDiff, 0, '', '');
 
   // Almacena el nuevo color en el array
   $colorBg[$i] = 'rgb(' . $witheR . ', ' . $witheG . ', ' . $witheB . ')';
@@ -132,6 +134,7 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
     for ($i = 0; $i <= $pointDivisor; $i++)
     {
       $percentage = $i * (100 / $pointDivisor);
+      $percentage = number_format($percentage, 0, '', '');
       $score = number_format($i * $steps, 0, '', '');
       echo "$percentage% {
                 color: {$colors[$i]};
@@ -156,6 +159,7 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
     for ($i = 0; $i <= $pointDivisor; $i++)
     {
       $percentage = $i * (100 / $pointDivisor);
+      $percentage = number_format($percentage, 0, '', '');
       echo "$percentage% {
               background-color: {$colorBg[$i]};
             }";
@@ -169,6 +173,7 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
     for ($i = 0; $i <= $pointDivisor; $i++)
     {
       $percentage = $i * (100 / $pointDivisor);
+      $percentage = number_format($percentage, 0, '', '');
       echo "$percentage% {
                 color: {$colors[$i]};
             }";
@@ -192,6 +197,7 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
     for ($i = 0; $i <= $pointDivisor; $i++)
     {
       $percentage = $i * (100 / $pointDivisor);
+      $percentage = number_format($percentage, 0, '', '');
       echo "$percentage% {
                 background: {$colors[$i]};
             }";
@@ -206,6 +212,7 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
     for ($i = ($pointDivisor / 2); $i <= $pointDivisor; $i++)
     {
       $percentage = ($i - ($pointDivisor / 2)) * ((100 / $pointDivisor) * 2);
+      $percentage = number_format($percentage, 0, '', '');
       echo "$percentage% {
                 background: {$colors[$i]};
             }";
@@ -225,6 +232,7 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
   <?php
   include_once '../include/navbar.php';
   ?>
+
 
   <div class="circle-bg-color-anim score-circular">
     <div class="circle-bg-color-anim score-inner"></div>
