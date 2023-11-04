@@ -3,7 +3,7 @@ include_once '../../include/session.php';
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST')
 {
-  header('Location: ../index.php');
+  header('Location: ../../index.php');
 }
 
 $puntos = 0;
@@ -12,8 +12,7 @@ for ($i = 1; $i <= 20; $i++)
   $p = $_POST["p" . $i];
   $puntos += $p;
 }
-$puntos = 99;
-$blanquear = 0.87;
+$blanquear = 0.85;
 $startColor = array(80, 219, 7);
 // colores en formato rgb(r,g,b)
 switch ($puntos)
