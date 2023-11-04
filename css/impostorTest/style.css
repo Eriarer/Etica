@@ -2,8 +2,37 @@
 @import url(thumbRadio.css);
 @import url(tooltip.css);
 
+.myForm {
+  width: 100%;
+  max-width: 120em;
+  margin: 0 auto;
+}
+
+.question {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0px !important;
+  margin-left: 0px !important;
+}
+
+.nQuestion {
+  font-weight: bold;
+  min-width: 2em;
+  height: 1.5em;
+
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border-radius: 0px 35% 35% 0px;
+  margin-right: 0.2em;
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+}
 .card {
-  background: #6c5a94;
+  background: var(--mono1);
   border-radius: 10px;
 }
 
