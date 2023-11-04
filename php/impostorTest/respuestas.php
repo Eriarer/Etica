@@ -12,6 +12,7 @@ for ($i = 1; $i <= 20; $i++)
   $p = $_POST["p" . $i];
   $puntos += $p;
 }
+$pointDivisor = 40;
 $blanquear = 0.85;
 $startColor = array(80, 219, 7);
 // colores en formato rgb(r,g,b)
@@ -48,9 +49,6 @@ switch ($puntos)
     $endColor = array(80, 219, 7);
     break;
 }
-$puntos = number_format($puntos, 0, '', '');
-$pointDivisor = 40;
-$pointDivisor = number_format($pointDivisor, 0, '', '');
 $pointDivisor = $pointDivisor < 1 ? 1 : $pointDivisor;
 $steps = $puntos / $pointDivisor;
 $colors = [];
