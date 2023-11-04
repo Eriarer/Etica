@@ -8,14 +8,16 @@
   margin: 0 auto;
 }
 
-.question {
+.question,
+.points {
   display: flex;
   flex-direction: row;
   padding-left: 0px !important;
   margin-left: 0px !important;
 }
 
-.nQuestion {
+.nQuestion,
+.intervalo {
   font-weight: bold;
   min-width: 2em;
   height: 1.5em;
@@ -31,9 +33,21 @@
   margin-left: 0px !important;
   padding-left: 0px !important;
 }
+
+.intervalo {
+  min-width: 5em;
+  border-radius: 0px 20px 20px 0px;
+}
+
 .card {
   background: var(--mono1);
   border-radius: 10px;
+}
+
+.card-text {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: justify;
 }
 
 .card .h4 {
