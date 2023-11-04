@@ -48,9 +48,9 @@ switch ($puntos)
     $endColor = array(80, 219, 7);
     break;
 }
-
 $puntos = number_format($puntos, 0, '', '');
-$pointDivisor = $puntos % 2 == 0 ? $puntos / 2  : ($puntos + 1) / 2;
+$pointDivisor = 40;
+$pointDivisor = number_format($pointDivisor, 0, '', '');
 $pointDivisor = $pointDivisor < 1 ? 1 : $pointDivisor;
 $steps = $puntos / $pointDivisor;
 $colors = [];
@@ -210,7 +210,7 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
     // y van a terminar a la vez
     for ($i = ($pointDivisor / 2); $i <= $pointDivisor; $i++)
     {
-      $percentage = ($i - ($pointDivisor / 2)) * ((100 / $pointDivisor) * 2);
+      $percentage = ($i - ($pointDivisor / 2)) * number_format(200 / $pointDivisor, 0, '', '');
       $percentage = number_format($percentage, 0, '', '');
       echo "$percentage% {
                 background: {$colors[$i]};
@@ -231,8 +231,6 @@ $animationDuration = ($animationLeft == 'rotate(0deg)') ? '0.6s' : '1.2s';
   <?php
   include_once '../../include/navbar.php';
   ?>
-
-
   <div class="circle-bg-color-anim score-circular">
     <div class="circle-bg-color-anim score-inner"></div>
     <div class="score-number"></div>
