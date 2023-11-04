@@ -9,3 +9,25 @@ body {
 * {
   color: var(--text);
 }
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+/* cambiar scrollbar */
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--quaternary);
+  transition: 1s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--quinary);
+}
