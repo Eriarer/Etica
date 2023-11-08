@@ -1,0 +1,136 @@
+.principal {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.principal h1 {
+    text-align: center;
+    font-size: 4em;
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+}
+
+.principal h3 {
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+.principal h4 {
+    margin-top: 1em;
+}
+
+.principal p,
+.principal ul {
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+img {
+    width: 80%;
+    border-radius: 5%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.image {
+    text-align: center;
+    align-items: center;
+}
+
+.dividedList img {
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 45%;
+}
+
+.dividedList {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.dividedList ul {
+    margin: 10px;
+    width: 100%;
+}
+
+.dividedList2 img {
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 45%;
+}
+
+.dividedList2 {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.dividedList2 ul {
+    margin: 10px;
+    width: 100%;
+}
+
+hr {
+    border: .5rem double gray  !important;
+    width: 98%;
+    border-radius: 5px;
+}
+
+button{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+    width: 10em;
+    border: 1px solid black;
+    background-color: rgb(75, 75, 75);
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: rgb(0, 140, 255);
+    text-decoration: underline;
+}
+
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* Estilos para las celdas de encabezado */
+table td {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+    border: 1px solid white;
+}
+
+/* Estilos para las celdas de datos */
+table th {
+    border: 1px solid white;
+    padding: 8px;
+    background-color: black; /* Fondo gris */
+    color: white; /* Texto negro */
+}
+
+table, tr, th, td{
+    border-radius: 1px solids white;
+}
