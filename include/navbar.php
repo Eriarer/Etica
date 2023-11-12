@@ -13,7 +13,7 @@
         <a class="nav-link" href="<?php echo $_SERVER['ROOT'] . 'php/impostorTest/impostorTest.php' ?>"><i class="nf nf-md-brain"></i> Test</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link" href="<?php echo $_SERVER['ROOT'] . 'php/recursosAD.php' ?>">Recursos adicionales</a>
       </li>
     </ul>
   </div>
