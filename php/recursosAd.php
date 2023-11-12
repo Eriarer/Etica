@@ -73,7 +73,7 @@
             </ul>
             <center>
             <ul>
-                <button><a href="https://www.nytimes.com/es/2020/09/29/espanol/negocios/sindrome-impostor-mujeres.html">Harvard Business Review</a></button>
+                <button><a href="https://hbr.org/2021/02/stop-telling-women-they-have-imposter-syndrome">Harvard Business Review</a></button>
             </ul>
         </div>
     <hr>
