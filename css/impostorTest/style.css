@@ -22,7 +22,7 @@
   min-width: 2em;
   height: 1.5em;
 
-  background: var(--primary);
+  background: #7234fa !important;
   display: flex;
   justify-content: center;
   align-items: center;
