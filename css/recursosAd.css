@@ -61,8 +61,8 @@ img {
 }
 
 .dividedList2 {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     display: flex;
     text-align: center;
     align-items: center;
@@ -74,12 +74,12 @@ img {
 }
 
 hr {
-    border: .5rem double gray  !important;
+    border: .5rem double gray !important;
     width: 98%;
     border-radius: 5px;
 }
 
-button{
+button {
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 1em;
@@ -94,12 +94,12 @@ button{
     cursor: pointer;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
-a:hover{
+a:hover {
     color: rgb(0, 140, 255);
     text-decoration: underline;
 }
@@ -115,22 +115,34 @@ table {
 
 /* Estilos para las celdas de encabezado */
 table td {
-    background-color: #333;
-    color: white;
+    color: rgb(32, 30, 30);
     font-weight: bold;
     padding: 8px;
-    text-align: left;
+    text-align: justify;
     border: 1px solid white;
 }
 
 /* Estilos para las celdas de datos */
 table th {
+    text-align: center;
     border: 1px solid white;
     padding: 8px;
-    background-color: black; /* Fondo gris */
-    color: white; /* Texto negro */
+    background-color: #2f2173;
+    color: white;
+    font-size: 1.7em;
 }
 
-table, tr, th, td{
+table,
+tr,
+th,
+td {
     border-radius: 1px solids white;
+}
+
+table tr:nth-child(even) {
+    background-color: #7f74f2;
+}
+
+table tr:nth-child(odd) {
+    background-color: #8162f0;
 }
