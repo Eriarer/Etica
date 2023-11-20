@@ -14,6 +14,7 @@
   flex-direction: row;
   padding-left: 0px !important;
   margin-left: 0px !important;
+  color: white;
 }
 
 .nQuestion,
@@ -22,7 +23,8 @@
   min-width: 2em;
   height: 1.5em;
 
-  background: #7234fa !important;
+  background: #7234fa ;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -4,6 +4,7 @@ input[type="radio"] {
 
 .nf.radio {
   font-size: 2.5rem;
+  color: white;
 }
 
 label.radio:hover,
