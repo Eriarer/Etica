@@ -2,8 +2,9 @@
 /* NerdFonts */
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
+
 body {
-  background-color: var(--3);
+  background-color: var(--primary);
 }
 
 * {
