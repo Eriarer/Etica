@@ -1,5 +1,32 @@
 :root {
-  --body: #09003b;
+  --body: #fee2ac;
+  --text: #ddd8ce;
+
+  --primary: #7234fa;
+  --secondary: #564db5;
+  --tertiary: #913b95;
+  --quaternary: #554d6b;
+  --quinary: #6a5c96;
+
+  --mono0: #392a58;
+  --mono1: #6c5a94;
+  --mono2: #9583bb;
+  --mono3: #cfc2eb;
+
+  --1: #017707;
+  --2: #4e8500;
+  --3: #a19115;
+  --4: #a54800;
+  --5: #770101;
+
+  --1-sel: #00b409;
+  --2-sel: #74c700;
+  --3-sel: #ddc724;
+  --4-sel: #ff6f00;
+  --5-sel: #ca0000;
+
+
+  /* --body: #09003b;
   --text: #ddd8ce;
 
   --primary: #7234fa;
@@ -23,5 +50,5 @@
   --2-sel: #74c700;
   --3-sel: #ddc724;
   --4-sel: #ff6f00;
-  --5-sel: #ca0000;
+  --5-sel: #ca0000; */
 }
