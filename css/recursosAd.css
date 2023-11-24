@@ -94,9 +94,8 @@ button {
     cursor: pointer;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+#bibliografias ul {
+    list-style-type: none;
 }
 
 a:hover {
@@ -106,7 +105,7 @@ a:hover {
 
 
 /* Estilos para la tabla */
-table {
+.principal table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1em;
@@ -114,7 +113,7 @@ table {
 }
 
 /* Estilos para las celdas de encabezado */
-table td {
+.principal table td {
     color: rgb(32, 30, 30);
     font-weight: bold;
     padding: 8px;
@@ -123,7 +122,7 @@ table td {
 }
 
 /* Estilos para las celdas de datos */
-table th {
+.principal table th {
     text-align: center;
     border: 1px solid white;
     padding: 8px;
@@ -132,17 +131,17 @@ table th {
     font-size: 1.7em;
 }
 
-table,
-tr,
-th,
-td {
+.principal table,
+.principal tr,
+.principal th,
+.principal td {
     border-radius: 1px solids white;
 }
 
-table tr:nth-child(even) {
+.principal table tr:nth-child(even) {
     background-color: #7f74f2;
 }
 
-table tr:nth-child(odd) {
+.principal table tr:nth-child(odd) {
     background-color: #8162f0;
 }
