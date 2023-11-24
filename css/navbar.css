@@ -18,3 +18,19 @@
         color: #fff;
     }
 }
+
+.nf {
+    color: #fff;
+    font-size: larger;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: var(--mono3);
+        transform: scale(1.1);
+    }
+
+    &>.navbarIcon {
+        color: #fff;
+    }
+}
