@@ -13,6 +13,7 @@ include_once 'include/session.php';
   <link rel="stylesheet" href="css/tooltip.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/basis.css">
+  <link rel="stylesheet" href="css/footer.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </head>
@@ -21,6 +22,7 @@ include_once 'include/session.php';
 <body>
   <?php
   include_once 'include/navbar.php';
+
   ?>
   <div class="contenedor">
     <h1 class="titulo">El Síndrome del Impostor</h1>
